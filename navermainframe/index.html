@@ -10,15 +10,12 @@ body {background:#000 url("title.jpg") no-repeat}
 <body>
 <script>
 $(document).ready(function(){
-
-  function logResults(json){
-    console.log(json);
-  }
-
   $.ajax({
-    url: "http://ip-api.com/json",
-    dataType: "jsonp",
-    jsonpCallback: "logResults"
+    dataType: "json",
+    url: "https://api.ipify.org?format=json",
+    success: function(data) {
+      console.log(data);
+    }
   });
 
 });
