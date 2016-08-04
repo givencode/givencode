@@ -10,13 +10,17 @@ body {background:#000 url("title.jpg") no-repeat}
 <body>
 <script>
 $(document).ready(function(){
+
+  function logResults(json){
+    console.log(json);
+  }
+
   $.ajax({
-    dataType: "json",
     url: "http://ip-api.com/json",
-    success: function(data) {
-      console.log(data);
-    }
+    dataType: "jsonp",
+    jsonpCallback: "logResults"
   });
+
 });
 </script>
 </body>
