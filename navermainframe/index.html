@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+<style>
+html,body {margin:0;padding:0}
+body {background:#000 url("title.jpg") no-repeat}
+</style>
+<script src="../javascript/jquery-3.1.0.min.js"></script>
+</head>
+<body>
+<script>
+$(document).ready(function(){
+  $.ajax({
+    dataType: "json",
+    url: "http://ip-api.com/json",
+    success: function(data) {
+      console.log(data);
+    }
+  });
+});
+</script>
+</body>
+</html>
