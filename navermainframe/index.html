@@ -8,6 +8,16 @@ body {background:#000 url("title.jpg") no-repeat}
 <script src="../javascript/jquery-3.1.0.min.js"></script>
 </head>
 <body>
+<script type="application/javascript">
+  $(function() {
+    $.getJSON("https://api.ipify.org?format=jsonp&callback=?",
+      function(json) {
+        document.write("My public IP address is: ", json.ip);
+      }
+    );
+  });
+</script>
+
 <script>
 $(document).ready(function(){
   $.ajax({
